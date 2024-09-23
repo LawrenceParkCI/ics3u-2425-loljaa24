@@ -12,6 +12,10 @@ public class AboutMe {
 		System.out.println("Right now, I am in grade 11.");
 		System.out.println("My teacher for the ICS3U course is Ms. Kemp.");
 		System.out.println("The school I go to is Lawrence Park Collegiate Institute.");
+		System.out.println("\"Go Panthers!");
+		System.out.println("---------------------");
+		System.out.println("Week of September 23-27 Timetable");
+		System.out.format("Day 1 (Monday, Friday): %-10sICS3U- %7s", "Period 1:", "9:00-10:15");
 
 	}
 
