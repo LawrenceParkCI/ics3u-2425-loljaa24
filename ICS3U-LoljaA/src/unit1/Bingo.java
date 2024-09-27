@@ -3,12 +3,13 @@ package unit1;
 /**
  * Description: This program prints a bingo card and how to play bingo
  * Date: Sept 25, 2024
- * Author: @author Arti Lolja
+ * @author Arti Lolja
  */
 public class Bingo {
 
 	/**
-	 * @param args
+	 * This is the entry point to the program.
+	 * @param args unused
 	 */
 	public static void main(String[] args) {
 		// This print out rules for playing bingo
@@ -37,8 +38,8 @@ public class Bingo {
 		System.out.format("\n________________|_______________|_______________|_______________|_______________|");
 		System.out.format("\n%10s%10s%10s%10s%10s", "9\t|", "16\t|", "36\t|", "46\t|", "66\t|");
 		System.out.format("\n________________|_______________|_______________|_______________|_______________|");
-		
-		
+
+
 
 	}
 

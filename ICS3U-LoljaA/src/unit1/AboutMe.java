@@ -2,10 +2,13 @@ package unit1;
 /**
  * Description: This program prints information about the author, Arti Lolja.
  * Date: Sept 20, 2024
- * Author: @author Arti Lolja
+ * @author Arti Lolja
  */
 public class AboutMe {
-
+	/**
+	 * This is the entry point to the program.
+	 * @param args unused
+	 */
 	public static void main(String[] args) {
 		// This prints out information about me
 		System.out.println("Hello, my name is Arti Lolja.");	
