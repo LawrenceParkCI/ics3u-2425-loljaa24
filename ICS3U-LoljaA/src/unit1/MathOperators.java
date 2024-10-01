@@ -54,9 +54,9 @@ public class MathOperators {
         System.out.println("\nPart 2 - Calculate Using Operators");
         
         // Print out, using one println statement, what 45 degrees Celsius is in Fahrenheit
-        System.out.println(45 * (9.0/5.0) + 32);
+        System.out.println(45 * (9.0/5.0) + 32 + "°F");
         // Print out, using a print and a println statement, what 900 Fahrenheit is in Celsius
-		System.out.println((300 - 32) * (5.0/9.0));
+		System.out.println((300 - 32) * (5.0/9.0) + "°C");
 
 		
         System.out.println("\nPart 3");
