@@ -1,6 +1,6 @@
 package unit1;
 /**
- * Description:
+ * Description: This program guides the programmer as of how to create variable
  * Date: Sept 30, 2024
  * @author Arti Lolja
  */
