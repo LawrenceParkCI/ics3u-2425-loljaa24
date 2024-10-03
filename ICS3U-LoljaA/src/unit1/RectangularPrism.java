@@ -1,13 +1,12 @@
 package unit1;
+
+import java.util.Scanner;
 /**
  * Description: This program calculates the area of a rectangle
  * Date: Oct 2, 2024
  * @author Arti Lolja
  */
-import java.util.Scanner;
-
 public class RectangularPrism {
-
 	/**
 	 * This is the entry point to the program
 	 * @param args unused

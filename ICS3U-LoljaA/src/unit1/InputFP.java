@@ -1,11 +1,11 @@
 package unit1;
+
+import java.util.Scanner;
 /**
  * Description: This program teaches the programmer about floating point variables
  * Date: Oct 3, 2024
  * @author Arti Lolja
  */
-import java.util.Scanner;
-
 public class InputFP {
 	/**
 	 * This is the entry point to the program
