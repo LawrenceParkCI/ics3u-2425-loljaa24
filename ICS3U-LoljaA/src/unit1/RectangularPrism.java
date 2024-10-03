@@ -6,7 +6,7 @@ package unit1;
  */
 import java.util.Scanner;
 
-public class RectangleArea {
+public class RectangularPrism {
 
 	/**
 	 * This is the entry point to the program
