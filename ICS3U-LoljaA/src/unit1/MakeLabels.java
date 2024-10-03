@@ -14,16 +14,17 @@ public class MakeLabels {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner (System.in);
 
+		// declare variables
 		String name;
 		String subject;
-
+		// get user input
 		System.out.println("Type a subject and press <Enter>");
 		subject = sc.nextLine();
-		
+
 		System.out.println("Type a name and press <Enter>");
 		name = sc.nextLine();
-		
 
+		// print the output
 		System.out.println("******************************");
 		System.out.println(name);
 		System.out.println(subject);
