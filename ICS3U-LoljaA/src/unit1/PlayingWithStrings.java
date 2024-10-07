@@ -1,5 +1,4 @@
 package unit1;
-import java.util.Scanner;
 /**
  * Description: This program teaches the programmer about strings
  * Date: Oct 3, 2024
