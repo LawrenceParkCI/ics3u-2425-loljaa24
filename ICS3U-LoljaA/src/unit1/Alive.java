@@ -33,8 +33,8 @@ public class Alive {
 		cday = sc.nextInt();
 
 		//print output
-		System.out.println("\nYou have been alive for " + (tdays = ((cyear - byear)*365) + ((cmonth - bmonth)*30) + (cday - bday)) + " days.");
-		System.out.println("You have been asleep for " + (shours = tdays*8) + " hours.");
+		System.out.println("\nYou have been alive for " + (tdays = ((cyear - byear)*365) + ((cmonth - bmonth)*30) + (cday - bday)) + " day(s).");
+		System.out.println("You have been asleep for around " + (shours = tdays*8) + " hours.");
 		sc.close();
 	}
 
