@@ -72,7 +72,11 @@ public class Casting {
     myNum = in.nextDouble();
     
     System.out.print("Rounding down to the nearest tenth, it is: ");
-    System.out.println("Rounded number: " + Math.rint(myNum));
+    myNum = myNum * 10;
+    myNum = Math.rint(myNum);
+    myNum = myNum / 10;
+    System.out.println(myNum);
+    
     
     in.close();
   }

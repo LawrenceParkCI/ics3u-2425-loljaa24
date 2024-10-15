@@ -113,7 +113,7 @@ public class UsingMathMethods {
 
 		//Does your program give a different answer if 0.3333333 is input instead of 0.33 for the power?
 
-		// Yes, because the 2nd number is more precise that it gives a different result
+		// Yes, because the 0.3333333 exponent is more precise that it gives a different result
 
 		sc.close();
 	}

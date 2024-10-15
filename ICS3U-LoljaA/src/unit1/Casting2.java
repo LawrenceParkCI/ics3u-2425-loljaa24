@@ -44,9 +44,13 @@ public class Casting2 {
     
     //create a new character myCharCap, and transform myChar into a capital 'A' and print it
     
+    // declare variables
+    char myCharCap;
     
-
-    
+    // print output
+    myCharCap = (char)(myChar - 32);
+    System.out.print("\n");
+    System.out.println(myCharCap);
 
   }
 }
