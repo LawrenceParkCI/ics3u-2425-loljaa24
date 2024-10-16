@@ -81,9 +81,9 @@ public class Commenting {
     /*
     * Variables Name    |   Value
     * ---------------------------------
-    * num1              |
-    * num2              |
-    * stringNum         |
+    * num1              |	26
+    * num2              |	-6.4
+    * stringNum         |	52 - 16.0; 26 - 6.4
     */
     
   }

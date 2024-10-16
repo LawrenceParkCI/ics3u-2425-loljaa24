@@ -1,7 +1,7 @@
 package unit1;
 
 /**
- * Description: This teaches the program even more about casting
+ * Description: This teaches the programmer even more about casting
  * Date: Oct 15, 2024
  * @author Arti Lolja
  */
