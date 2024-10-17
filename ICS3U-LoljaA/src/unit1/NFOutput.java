@@ -23,8 +23,17 @@ public class NFOutput {
 		System.out.println("The tax rate is " + percent.format(TAX_RATE));
 		
 		//How can you change how your value is displayed?
+		
+		// A different NumberFormat code can be used
+		
 		//What other formats does NumberFormat offer?
 
+		/* Other formats does NumberFormat offer are:
+		 * NumberFormat.getinstance();
+		 * and
+		 * NumberFormat.getInstance(locale l);
+		 */
+		
 
 		sc.close();
 	}

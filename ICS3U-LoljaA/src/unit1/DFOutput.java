@@ -39,12 +39,12 @@ public class DFOutput {
 		//Modify the parameter for the DecimalFormat on line 15 to be "$0.00"
 		//Run the program again with the cost of 10, how is the output different?
 
-		// The output is different because the format was changed to $0.00
+		// The output is different because the format was changed to include a dollar sign
 
 		//Modify the parameter for the DecimalFormat on line 15 to be "$0.##"
 		//Run the program again with the cost of 10, how is the output different?
 
-		// The output is $11.3 because the format changed to $0.##
+		// The output is $11.3 because the format changed to $0.##, the ## is the same as .00 except it does not display trailing zeros from the final output
 
 		//Modify the parameter for the DecimalFormat on line 15 to be "$0.##"
 		//Calculate 10.50 x 1.13 = 11.865
@@ -60,7 +60,7 @@ public class DFOutput {
 		//Modify the parameter for the DecimalFormat on line 15 to be "$#,###,##0.00"
 		//Run the program again with the cost of 123456, how is the output different? Explain what is happening.
 
-		// The output is $139,505.28
+		// The output is $139,505.28 because commas are added to the decimal format.
 
 		//Uncomment the following print line, and run the program with any value for the cost.
 		//What value is printed for the TAX_RATE?
