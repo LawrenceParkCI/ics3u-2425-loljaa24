@@ -27,11 +27,13 @@ public class NFOutput {
 		// A different NumberFormat code can be used
 		
 		//What other formats does NumberFormat offer?
-
+		
 		/* Other formats does NumberFormat offer are:
-		 * NumberFormat.getinstance();
-		 * and
-		 * NumberFormat.getInstance(locale l);
+		 * NumberFormat.getDecimalInstance();
+		 * NumberFormat.getIntegerInstance
+		 * NumberFormat.getUnitInstance();
+		 * NumberFormat.getCompactNumberInstance();
+		 
 		 */
 		
 
