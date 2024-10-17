@@ -55,7 +55,6 @@ public class Casting3 {
 		// the function only works if the variable strNum is an integer
 
 		// What do you think the code to change a String to double would look like?
-		//Similarly, test out the code and write down what instructions
 
 		String strNum2 = "-10.0";
 		double myNum2 = Double.parseDouble(strNum2);
