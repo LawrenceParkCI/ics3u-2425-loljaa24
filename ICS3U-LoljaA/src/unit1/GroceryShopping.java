@@ -4,7 +4,6 @@ import java.text.NumberFormat;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Scanner;
-
 /**
  * Description: This program prints out a grocery receipt
  * Date: Oct 18, 2024
@@ -52,15 +51,14 @@ public class GroceryShopping {
 	LocalDateTime now = LocalDateTime.now();  
 	System.out.println(dtf.format(now));
 	NumberFormat money = NumberFormat.getCurrencyInstance();
-	NumberFormat percentage = NumberFormat.getPercentInstance();
 	
 	// declaring more variables
 	double itemtotalcost1 = cost1*amount1, itemtotalcost2 = cost2*amount2;
-	double taxrate = 0.13;
+	final double taxrate = 0.13;
 	double subtotal = itemtotalcost1 + itemtotalcost2;
 	double taxtotal = subtotal * taxrate;
 	double finaltotal = subtotal + taxtotal;
-	int finaltotal2 = (int)finaltotal;
+	int finaltotal2 = (int)(Math.round(finaltotal));
 	
 	System.out.format("\n%-15s| %-15s| %-15s| %-15s|", "| Item\t", "Price", "Quant.", "Total Price   ");
 	System.out.println("\n|_______________|________________|________________|________________|");
