@@ -59,6 +59,7 @@ public class GroceryShopping {
 	double taxtotal = subtotal * taxrate;
 	double finaltotal = subtotal + taxtotal;
 	int finaltotal2 = (int)(Math.round(finaltotal));
+	double nearestfive = Math.round(finaltotal/0.05)*0.05
 	
 	System.out.format("\n%-15s| %-15s| %-15s| %-15s|", "| Item\t", "Price", "Quant.", "Total Price   ");
 	System.out.println("\n|_______________|________________|________________|________________|");
@@ -69,6 +70,7 @@ public class GroceryShopping {
 	System.out.format("\n%50s %16s", "Tax:", money.format(taxtotal));
 	System.out.format("\n%50s %16s", "Total:", money.format(finaltotal));
 	System.out.println("\n\nThis is approximately $" + finaltotal2 +".");
+	System.out.println("If you are paying with cash, that will be $" + nearestfive);
 	System.out.println("\nHave a good rest of your day!");
 	System.out.println("Thank you for visiting Mr.Lolja's grocery!");
 	
