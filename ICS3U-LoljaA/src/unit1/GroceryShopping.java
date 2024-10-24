@@ -70,7 +70,7 @@ public class GroceryShopping {
 	System.out.format("\n%50s %16s", "Tax:", money.format(taxtotal));
 	System.out.format("\n%50s %16s", "Total:", money.format(finaltotal));
 	System.out.println("\n\nThis is approximately $" + finaltotal2 +".");
-	System.out.println("If you are paying with cash, that will be $" + nearestfive);
+	System.out.println("If you are paying with cash, that will be " + money.format(nearestfive));
 	System.out.println("\nHave a good rest of your day!");
 	System.out.println("Thank you for visiting Mr.Lolja's grocery!");
 	
