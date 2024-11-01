@@ -60,6 +60,7 @@ public class GroceryShopping {
 	double finaltotal = subtotal + taxtotal;
 	int finaltotal2 = (int)(Math.round(finaltotal));
 	
+	
 	System.out.format("\n%-15s| %-15s| %-15s| %-15s|", "| Item\t", "Price", "Quant.", "Total Price   ");
 	System.out.println("\n|_______________|________________|________________|________________|");
 	System.out.format("|%-15s| %15s| %15s| %15s|", item1, money.format(cost1), amount1, money.format(itemtotalcost1));
