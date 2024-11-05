@@ -7,7 +7,7 @@ package unit2;
 public class BasicBoolean {
 	/**
 	 * This is the entry point to the program
-	 * @param args
+	 * @param args unused
 	 */
   public static void main(String[] args) {
     //we've declared a variable called isPurple of boolean type

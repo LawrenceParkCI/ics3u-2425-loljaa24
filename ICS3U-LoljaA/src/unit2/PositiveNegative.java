@@ -9,7 +9,7 @@ import java.util.Scanner;
 public class PositiveNegative {
 	/**
 	 * This is the entry point tothe program
-	 * @param args
+	 * @param args unused
 	 */
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
