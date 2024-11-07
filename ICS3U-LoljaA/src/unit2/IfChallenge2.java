@@ -21,13 +21,15 @@ public class IfChallenge2 {
 		int num1, num2, num3;
 
 		// receive input
-		System.out.print("Type in three integers:");
+		System.out.println("Type in a integer: ");
 		num1 = sc.nextInt();
+		System.out.println("Type in a second integer: ");
 		num2 = sc.nextInt();
+		System.out.println("Type in a third integer: ");
 		num3 = sc.nextInt();
 		
 		//print output
-		if (num1 == 2) {
+		if (num1 < num2 && num2 < num3) {
 			System.out.println("The numbers are in order.");
 		}
 		else {
