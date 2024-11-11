@@ -1,9 +1,9 @@
 package unit2;
 import java.util.Scanner;
 /**
-* Description:
-* Date:
-* @author
+* Description: This program teaches the programmer about if statements
+* Date: Nov 5, 2024
+* @author Arti Lolja
 */
 public class IfStatements2 {
 	/**

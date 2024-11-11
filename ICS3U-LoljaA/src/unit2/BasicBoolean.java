@@ -26,15 +26,15 @@ public class BasicBoolean {
     int secondNum = 10;
     double thirdNum = 5.5;
 
-    //this prints out true because firstnum is less than secondnum
+    //this prints out true because firstNum is less than secondNum
     System.out.println("1: " + (firstNum < secondNum)); 
 
-    //this prints out false because firstnum is not greater than secondnum
+    //this prints out false because firstNum is not greater than secondNum
     System.out.println("2: " + (firstNum > secondNum)); 
 
-    //this prints out true because firstnum is greater than or equal to thirdnum if thirdnum is casted to an integer
+    //this prints out true because firstNum is greater than or equal to thirdNum if thirdNum is casted to an integer
     System.out.println("3: " + (firstNum <= (int)thirdNum)); 
-    //this prints out true because firstnum is less than or equal to thirdnum
+    //this prints out true because firstNum is less than or equal to thirdNum
     System.out.println("4: " + (firstNum <= thirdNum)); 
 
     /*Test out these boolean operators. Figure out the meaning

@@ -2,7 +2,7 @@ package unit2;
 import java.util.Scanner;
 /**
  * Description: This is a challenge using if statements
- * Date: Nov , 2024
+ * Date: Nov 5, 2024
  * @author Arti Lolja
  */
 public class IfChallenge {
@@ -60,7 +60,7 @@ public class IfChallenge {
 			System.out.println("You can keep being wholesome.");
 		}
 		if (favNum % 10 == 8) {
-			System.out.println("You are too full...");
+			System.out.println("You too are full...");
 		}
 		else if (favNum % 10 == 9) {
 			System.out.println("Canada is a really nice country!");

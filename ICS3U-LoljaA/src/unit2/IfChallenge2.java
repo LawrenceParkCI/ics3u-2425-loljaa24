@@ -7,6 +7,10 @@ import java.util.Scanner;
  * @author Arti Lolja
  */
 public class IfChallenge2 {
+	/**
+	 * This is the entry point to the program
+	 * @param args unused
+	 */
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 		//This is for the portfolio
