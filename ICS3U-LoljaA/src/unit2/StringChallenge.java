@@ -63,16 +63,16 @@ public class StringChallenge {
 		}
 		
 		// Declaring a variable
-		int s5;
+		int i1;
 		String s6 = "5";
 		
 		//Receive input.
 		System.out.print("Type in an integer: ");
-		s5 = sc.nextInt();
+		i1 = sc.nextInt();
 		
 		//Print output:
-		System.out.println("The integer you typed in was: " + s5); // implicit casting
-		System.out.println("The total of the typed integer and 5 is: " + (s5 + Integer.parseInt(s6))); // explicit casting
+		System.out.println("The integer you typed in was: " + i1); // implicit casting
+		System.out.println("The total of the typed integer and 5 is: " + (i1 + Integer.parseInt(s6))); // explicit casting
 		
 		sc.close();
 			}
