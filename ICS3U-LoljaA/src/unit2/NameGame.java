@@ -25,7 +25,7 @@ public class NameGame {
 		if (Math.random() >= 0.3) {
 			System.out.println("The name " + name + " is my favourite!"); }
 		else {
-			System.out.println("I HATE THAT NAME!"); }
+			System.out.println("I HATE THE NAME " + name + "!"); }
 		sc.close();
 		
 	}
