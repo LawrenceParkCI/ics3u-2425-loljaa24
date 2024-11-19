@@ -43,7 +43,7 @@ public class IfChallenge3 {
 		// Receiving name and opinion before starting quiz...
 		System.out.print("Hey you! What is your name: ");
 		s1 = sc.nextLine();
-		System.out.println("Nice name!");
+		System.out.println("Nice name " + s1 + "!");
 		System.out.print("\nDo you want to do a short quiz? ");
 		s2 = sc.nextLine();
 		if (s2.equalsIgnoreCase("Yes")) {
@@ -159,11 +159,11 @@ public class IfChallenge3 {
 		System.out.println("\nCongratulations on completing the quiz!");
 		System.out.println("Your final score is: " + quizPoints + "/7.0");
 		System.out.println("You got a grade of " + (Math.rint((quizPoints / 7)*100)) + "%.");
-		if (quizPoints == 4) {
+		if (quizPoints == 7) {
 			System.out.println("\nGood job!!! You got a perfect score."); }
-		else if (quizPoints == 3) {
+		else if (quizPoints >= 5) {
 			System.out.println("\nYou should be proud of yourself, you did better than 50% of people that took this quiz."); }
-		else if (quizPoints == 2) {
+		else if (quizPoints >= 3) {
 			System.out.println("\nYou failed according to the american school system."); }
 		else {
 			System.out.println("\nHow????"); }
