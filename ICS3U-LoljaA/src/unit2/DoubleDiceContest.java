@@ -19,6 +19,7 @@ public class DoubleDiceContest {
 		
 		// introduction
 		System.out.println("Welcome to the dice competition!");
+		Thread.sleep(1500);
 		System.out.println("The user's dice are being rolled...");
 		Thread.sleep(1500);
 		// roll user's dice
@@ -27,6 +28,7 @@ public class DoubleDiceContest {
 		// declare the user's score
 		int totalUDice = die1 + die2;
 		System.out.println("The user has a total dice score of: " + totalUDice);
+		Thread.sleep(1500);
 		// computer's turn
 		System.out.println("\nThe computer's dice are being rolled...");
 		Thread.sleep(1500);
