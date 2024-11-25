@@ -62,9 +62,9 @@ public class DoWhile {
 		do {
 			System.out.println(word);
 			counter += 1;
-					
+
 		} while (counter <= 20);
-		
+
 		System.out.println("PROGRAM COMPLETE");
 		in.close();
 	}
