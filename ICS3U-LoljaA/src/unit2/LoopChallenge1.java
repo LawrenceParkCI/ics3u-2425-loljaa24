@@ -21,25 +21,28 @@ public class LoopChallenge1 {
      Decide on whether you should use the while or do while loop.
 		 */
 		// declare variables
-		String correct = "knock";
 		String password;
-		int attempts = 0;
+		int attempts = 1;
 		boolean correctPass = false;
 
 		// receive input
 		do {
+			attempts ++;
 			System.out.print("Print a password here: ");
 			password = sc.next();
-			attempts ++;
-			
-			if (correct == "knock" && attempts <= 3) {
+
+			if (password.equalsIgnoreCase("knock") && attempts <= 3) {
 				correctPass = true;
-				System.out.println("Welcome to the quarters!"); }
+				System.out.println("This is the correct password, Welcome to the quarters!"); }
 			else {
 				System.out.println("Incorrect password, try again."); }
-		} while (correctPass == true && attempts <= 3);
-		
-		
+		} while (correctPass == false && attempts <= 3);
+
+		if (attempts > 3) {
+			System.out.println("You are not welcome, too many ATTEMPTS...");
+		}
+
+		sc.close();
 
 
 	}
