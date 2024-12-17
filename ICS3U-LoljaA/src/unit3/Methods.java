@@ -9,6 +9,10 @@ Date: December 13, 2024
  */
 
 public class Methods {
+	/**
+	 * This is the entry point to the program
+	 * @param args unused
+	 */
 	public static void main(String[] args) {
 		/**
     Introduction
@@ -42,11 +46,12 @@ public class Methods {
 		System.out.println(myNum);
 
 		//Explain what is happening
-		System.out.println(doubleNumber(5));
+		System.out.println(doubleNumber(5)); // multiplies by 2
 
 
 		//Part 3 is at the bottom, and return here to print out your method's return value
-
+		System.out.print(larger(3,4));
+		
 	}
 
 
@@ -80,4 +85,12 @@ public class Methods {
 	/*
   Create a method that has 2 int as parameters, and returns the larger one. The name of the method is larger.
 	 */
+	public static int larger(int num1, int num2) {
+		if (num1 > num2) {
+			return num1;
+		}
+		else {
+			return num2;
+		}
+	}
 }
