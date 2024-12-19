@@ -1,4 +1,7 @@
 package unit3;
+
+import java.util.Scanner;
+
 /**
  * Description: This program is about creating different methods
  * Date: Dec 17, 2024
@@ -10,14 +13,56 @@ public class MathPlus {
 	 * @param args unused
 	 */
 	public static void main(String[] args) {
+		// distance method
 		double d1 = distance(5, 4, 6, 7);
 		System.out.println(d1);
+
+		// hypotenuse method
 		double h = hypotenuse(10.0, 5.5);
 		System.out.println(h);
+
+		// number of factors method
 		int f = numOfFactors(48);
 		System.out.println(f);
+
+		// prime number method
 		boolean p = isPrime(547);
 		System.out.println(p);
+
+		// sum of integers method
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter the number of integers");
+		int n = sc.nextInt();
+		int[] arr = new int[n];
+		System.out.println("Enter the " + n + " integers one by one.");
+		for (int i = 0; i < n; i++) {
+			arr[i] = sc.nextInt();
+		}
+		int sum = sum(arr);
+		System.out.println(sum);
+
+		// sum of doubles method
+		System.out.println("Enter the number of doubles");
+		int m = sc.nextInt();
+		double[] arr2 = new double[m];
+		System.out.println("Enter the " + m + " doubles one by one.");
+		for (int i = 0; i < m; i++) {
+			arr2[i] = sc.nextInt();
+		}
+		double sum2 = sum(arr2);
+		System.out.println(sum2);
+
+		// min method
+		System.out.println("Enter the number of doubles");
+		int o = sc.nextInt();
+		int[] arr3 = new int[m];
+		System.out.println("Enter the " + o + " doubles one by one.");
+		for (int i = 0; i < o; i++) {
+			arr3[i] = sc.nextInt();
+		}
+		int sum3 = min(arr3);
+		System.out.println(sum3);
+
 	}
 
 	/**
@@ -73,4 +118,48 @@ public class MathPlus {
 		}
 		return true;
 	}
+
+	/**
+	 * Description: Finds the total value of all of the integers in an array
+	 * @param num1 =>the amount of numbers in an array
+	 * @return => the sum of all of the integers in an array
+	 */
+	public static int sum( int[] num1 ) {
+		int sum = 0;
+		for (int i = 0; i < num1.length; i++) {
+			sum = sum + num1[i];
+		}
+		return sum;
+	}
+
+	/**
+	 * Description: Finds the total value of all of the doubles in an array
+	 * @param num1 => the amount of numbers in an array
+	 * @return => the sum of all of the doubles in an array
+	 */
+	public static double sum( double[] num1 ) {
+		double sum2 = 0;
+		for (int i = 0; i < num1.length; i++) {
+			sum2 = sum2 + num1[i];
+		}
+		return sum2;
+	}
+
+	/**
+	 * Description: Finds the minimum value of all of the integers in an array
+	 * @param x => the amount of integers in an array
+	 * @return => the smallest number in an array
+	 */
+	public static int min(int[] x) {
+		int min = 0;
+		for (int i = 1; i < x.length; i++) {
+			if (x[min] > x[i]) {
+				min = i;
+			}
+		}
+		return min;
+	}
+	
+	
+	
 }
