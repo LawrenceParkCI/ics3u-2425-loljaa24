@@ -31,7 +31,7 @@ public class MathPlus {
 
 		// sum of integers method
 		Scanner sc = new Scanner(System.in);
-		System.out.println("Enter the number of integers");
+		System.out.println("\nEnter the number of integers (SUM OF INTEGERS METHOD)");
 		int n = sc.nextInt();
 		int[] arr = new int[n];
 		System.out.println("Enter the " + n + " integers one by one.");
@@ -42,27 +42,89 @@ public class MathPlus {
 		System.out.println(sum);
 
 		// sum of doubles method
-		System.out.println("Enter the number of doubles");
+		System.out.println("\nEnter the number of doubles (SUM OF DOUBLES METHOD)");
 		int m = sc.nextInt();
 		double[] arr2 = new double[m];
 		System.out.println("Enter the " + m + " doubles one by one.");
 		for (int i = 0; i < m; i++) {
-			arr2[i] = sc.nextInt();
+			arr2[i] = sc.nextDouble();
 		}
 		double sum2 = sum(arr2);
 		System.out.println(sum2);
 
-		// min method
-		System.out.println("Enter the number of doubles");
-		int o = sc.nextInt();
-		int[] arr3 = new int[m];
-		System.out.println("Enter the " + o + " doubles one by one.");
-		for (int i = 0; i < o; i++) {
+		// min of ints method
+		System.out.println("\nEnter the number of integers (MIN OF INTS METHOD)");
+		int min = sc.nextInt();
+		int[] arr3 = new int[min];
+		System.out.println("Enter the " + min + " integers one by one.");
+		for (int i = 0; i < min; i++) {
 			arr3[i] = sc.nextInt();
 		}
 		int sum3 = min(arr3);
 		System.out.println(sum3);
 
+		// min of doubles method
+		System.out.println("\nEnter the number of doubles (MIN OF DOUBLES METHOD)");
+		int min2 = sc.nextInt();
+		double[] arr4 = new double[min2];
+		System.out.println("Enter the " + min2 + " integers one by one.");
+		for (int i = 0; i < min2; i++) {
+			arr4[i] = sc.nextDouble();
+		}
+		double sum4 = min(arr4);
+		System.out.println(sum4);
+
+		// max of ints method
+		System.out.println("\nEnter the number of integers (MAX OF INTS METHOD)");
+		int max = sc.nextInt();
+		int[] arr5 = new int[max];
+		System.out.println("Enter the " + max + " integers one by one.");
+		for (int i = 0; i < max; i++) {
+			arr5[i] = sc.nextInt();
+		}
+		int sum5 = max(arr5);
+		System.out.println(sum5);
+
+		// max of doubles method
+		System.out.println("\nEnter the number of doubles (MAX OF DOUBLES METHOD)");
+		int max2 = sc.nextInt();
+		double[] arr6 = new double[max2];
+		System.out.println("Enter the " + max2 + " doubles one by one.");
+		for (int i = 0; i < max2; i++) {
+			arr6[i] = sc.nextDouble();
+		}
+		double sum6 = max(arr6);
+		System.out.println(sum6);
+		
+		// bigDifference of ints method
+		System.out.println("\nEnter the number of integers (BIGDIFFERENCE OF INTS METHOD)");
+		int bigDiff = sc.nextInt();
+		int[] arr7 = new int[bigDiff];
+		System.out.println("Enter the " + bigDiff + " integers one by one.");
+		for (int i = 0; i < bigDiff; i++) {
+			arr7[i] = sc.nextInt();
+		}
+		int sum7 = bigDifference(arr7);
+		System.out.println(sum7);
+		
+		// bigDifference of doubles method
+		System.out.println("\nEnter the number of doubles (BIGDIFFERENCE OF DOUBLES METHOD)");
+		int bigDiff2 = sc.nextInt();
+		double[] arr8 = new double[bigDiff2];
+		System.out.println("Enter the " + bigDiff2 + " integers one by one.");
+		for (int i = 0; i < bigDiff2; i++) {
+			arr8[i] = sc.nextDouble();
+		}
+		double sum8 = bigDifference(arr8);
+		System.out.println(sum8);
+		
+		// factors method
+		System.out.println("\nEnter a integer (FACTORS METHOD)");
+		int[] fact = factors(sc.nextInt());
+		for (int i = 0; i < fact.length; i++) {
+			System.out.print(fact[i] + ", ");
+		}
+		
 	}
 
 	/**
@@ -148,18 +210,110 @@ public class MathPlus {
 	/**
 	 * Description: Finds the minimum value of all of the integers in an array
 	 * @param x => the amount of integers in an array
-	 * @return => the smallest number in an array
+	 * @return => the smallest integer in an array
 	 */
-	public static int min(int[] x) {
+	public static int min( int[] x ) {
 		int min = 0;
 		for (int i = 1; i < x.length; i++) {
 			if (x[min] > x[i]) {
 				min = i;
 			}
 		}
-		return min;
+		return x[min];
+	}
+
+	/**
+	 * Description: Finds the minimum value of all of the double in an array
+	 * @param x => the amount of double in an array
+	 * @return => the smallest double in an array
+	 */
+	public static double min( double[] x ) {
+		int min = 0;
+		for (int i = 1; i < x.length; i++) {
+			if (x[min] > x[i]) {
+				min = i;
+			}
+		}
+		return x[min];
+	}
+
+	/**
+	 * Description: Finds the maximum value of all of the integers in an array
+	 * @param x => the amount of integers in an array
+	 * @return => the largest integer in an array
+	 */
+	public static int max( int[] x ) {
+		int max = 0;
+		for (int i = 1; i < x.length; i++) {
+			if (x[max] < x[i]) {
+				max = i;
+			}
+		}
+		return x[max];
+	}
+
+	/**
+	 * Description: Finds the maximum value of all of the doubles in an array
+	 * @param x => the amount of doubles in an array
+	 * @return => the largest doubles in an array
+	 */
+	public static double max( double[] x ) {
+		int max = 0;
+		for (int i = 1; i < x.length; i++) {
+			if (x[max] < x[i]) {
+				max = i;
+			}
+		}
+		return x[max];
+	}
+	
+	/**
+	 * Description: Finds the difference between the largest integer to the smallest integer in an array
+	 * @param x=> the amount of integers in the array
+	 * @return => the difference between the largest to the smallest integer in an array
+	 */
+	public static int bigDifference( int[] x ) {
+		int min = 0, max = 0;
+		for (int i = 1; i < x.length; i++) {
+			if (x[min] > x[i]) {
+				min = i;
+			}
+			if (x[max] < x[i]) {
+				max = i;
+			}
+		}
+		int diff = (x[max] - x[min]);
+		return diff;
+	}
+	
+	/**
+	 * Description: Finds the difference between the largest double to the smallest double in an array
+	 * @param x=> the amount of doubles in the array
+	 * @return => the difference between the largest to the smallest double in an array
+	 */
+	public static double bigDifference( double[] x ) {
+		int min = 0, max = 0;
+		for (int i = 1; i < x.length; i++) {
+			if (x[min] > x[i]) {
+				min = i;
+			}
+			if (x[max] < x[i]) {
+				max = i;
+			}
+		}
+		double diff = (x[max] - x[min]);
+		return diff;
 	}
 	
 	
-	
+	public static int[] factors( int x ) {
+		int []arr = new int[numOfFactors(x)];  int counter = 0;
+		for (int i = x; i > 0 ; i--) {
+			if (x % i == 0) {
+				arr[counter] = i;
+				counter++;
+			}
+		}
+		return arr;
+	}
 }
