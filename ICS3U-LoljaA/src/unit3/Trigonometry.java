@@ -16,7 +16,7 @@ public class Trigonometry {
 
 		// narrowing down the user's options through if, if else, and else statements
 		Math.asin(0.0956);
-		
+
 		do {
 			System.out.println("What trigonometric function do you want to use?");
 			System.out.println("1. SOH CAH TOA\n2. SINE LAW\n3. COSINE LAW\n(TYPE IN THE NUMBER CORRELATED WITH THE OPTION)");
@@ -35,32 +35,32 @@ public class Trigonometry {
 							choice = sc.next();
 							if (choice.equals("1") || choice.equals("1.")) {
 								System.out.println("\nOption \"SIDE\" selected.");
-								System.out.println("Are you finding the opposite or the hypotenuse?");
-								do {
-									System.out.println("\n1. OPPOSITE\n2. HYPOTENUSE\n(TYPE IN THE NUMBER CORRELATED WITH THE OPTION)");
-									choice = sc.next();
-									if (choice.equals("1") || choice.equals("1.")) {
-
-									}
-									else if (choice.equals("2.") || choice.equals("2.")) {
-
-									}
-									else {
-										System.out.println("UNKOWN RESPONSE");
-									}
-								} while (restart == true);
+								System.out.println("State the angle first (between 0 and 1) then the opposite and then the hypotenuse. State a value of -1 for the unknown side");
+								double [] SinSide = new double[3];
+								for (int i = 0; i < 3; i++) {
+									SinSide[i] = sc.nextDouble();
+								} double sum = SohSide(SinSide);
+								if (SinSide[1] == -1) {
+									System.out.println("The Opposite is " + sum + ".");
+									System.out.println("Rounded, it is " + Math.rint(sum) + ".");
+									restart = false;
+								}
+								if (SinSide[2] == -1) {
+									System.out.println("The Hypotenuse is " + sum + ".");
+									System.out.println("Rounded, it is " + Math.rint(sum) + ".");
+									restart = false;
+								}
 							}
 							else if (choice.equals("2") || choice.equals("2.")) {
 								System.out.println("\nOption \"ANGLE\" selected.");
 								System.out.println("State the opposite first and then the hypotenuse: (NUMBERS ONLY)");
-								int x = 2;
-								double[] sin = new double[x];
-								for (int i = 0; i < x; i++) {
-									sin[i] = sc.nextDouble();
+								double[] sinAngle = new double[2];
+								for (int i = 0; i < 2; i++) {
+									sinAngle[i] = sc.nextDouble();
 								}
-								double sum = SohAngle(sin);
+								double sum = SohAngle(sinAngle);
 								System.out.println("Your two angles are " + sum + "° and " + (90-sum) + "°.");
-								System.out.println("Rounded, they are " + Math.rint(sum) + "° and " + Math.rint(sum) + "°.");
+								System.out.println("Rounded, they are " + Math.rint(sum) + "° and " + Math.rint(90-sum) + "°.");
 								restart = false;
 							}
 							else {
@@ -94,6 +94,14 @@ public class Trigonometry {
 							else if (choice.equals("2") || choice.equals("2.")) {
 								System.out.println("\nOption \"ANGLE\" selected.");
 								System.out.println("State first the adjacent and then the hypotenuse:");
+								double[] cosAngle = new double[2];
+								for (int i = 0; i < 2; i++) {
+									cosAngle[i] = sc.nextDouble();
+								}
+								double sum = CahAngle(cosAngle);
+								System.out.println("Your two angles are " + sum + "° and " + (90-sum) + "°.");
+								System.out.println("Rounded, they are " + Math.rint(sum) + "° and " + Math.rint(90-sum) + "°.");
+								restart = false;
 							}
 							else {
 								System.out.println("UNKNOWN RESPONSE");
@@ -126,6 +134,14 @@ public class Trigonometry {
 							else if (choice.equals("2") || choice.equals("2.")) {
 								System.out.println("\nOption \"ANGLE\" selected.");
 								System.out.println("State the opposite first and then the adjacent:");
+								double[] tanAngle = new double[2];
+								for (int i = 0; i < 2; i++) {
+									tanAngle[i] = sc.nextDouble();
+								}
+								double sum = ToaAngle(tanAngle);
+								System.out.println("Your two angles are " + sum + "° and " + (90-sum) + "°.");
+								System.out.println("Rounded, they are " + Math.rint(sum) + "° and " + Math.rint(90-sum) + "°.");
+								restart = false;
 							}
 							else {
 								System.out.println("UNKNOWN RESPONSE");
@@ -148,17 +164,22 @@ public class Trigonometry {
 			}
 		} while (restart == true);
 	}
-	
+
+	/**
+	 * Description: Converts an angle from radians to degrees
+	 * @param x => the angle in radians
+	 * @return => the angle in degrees
+	 */
 	public static double RadtoDeg(double x) {
 		return x * (180/Math.PI);
 	}
 	/**
-	 * Description: This mnethod finds the way to solve for the two angles using SOH.
+	 * Description: This method finds the way to solve for the two angles using SOH.
 	 * @param x => the two side lengths
 	 * @return => the first angle
 	 */
 	public static double SohAngle( double[] x ) {
-		if (x[1] == 0) {
+		if (x[0] == 0 || x[1] == 0) {
 			return Double.NaN;
 		}
 		double y = (x[0] / x[1]);
@@ -167,6 +188,55 @@ public class Trigonometry {
 		}
 		else {
 			return RadtoDeg(Math.asin(y));
+		}
+	}
+	/**
+	 * Description: This method finds the way to solve for the two angles using CAH.
+	 * @param x => the two side lengths
+	 * @return => the first angle
+	 */
+	public static double CahAngle( double[] x ) {
+		if (x[0] == 0 || x[1] == 0) {
+			return Double.NaN;
+		}
+		double y = (x[0] / x[1]);
+		if (y < 0 && y > 1) {
+			return Double.NaN;
+		}
+		else {
+			return RadtoDeg(Math.asin(y));
+		}
+	}
+	/**
+	 * Description: This method finds the way to solve for the two angles using TOA.
+	 * @param x => the two side lengths
+	 * @return => the first angle
+	 */
+	public static double ToaAngle( double[] x ) {
+		if (x[0] <= 0 || x[1] <= 0) {
+			return Double.NaN;
+		}
+		double y = (x[0] / x[1]);
+		if (y < 0 && y > 1) {
+			return Double.NaN;
+		}
+		else {
+			return RadtoDeg(Math.asin(y));
+		}
+	}
+
+	public static double SohSide( double[] x ) {
+		if (x[0] < 0 && x[0] > 1) {
+			return Double.NaN;
+		}
+		if (x[1] == -1) {
+			return x[0]*x[2];
+		}
+		else if (x[2] == -1) {
+			return x[1]/x[0];
+		}
+		else {
+			return Double.NaN;
 		}
 	}
 }
