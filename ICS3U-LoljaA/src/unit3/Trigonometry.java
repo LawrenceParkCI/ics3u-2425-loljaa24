@@ -35,19 +35,19 @@ public class Trigonometry {
 							choice = sc.next();
 							if (choice.equals("1") || choice.equals("1.")) {
 								System.out.println("\nOption \"SIDE\" selected.");
-								System.out.println("State the angle first (between 0 and 1) then the opposite and then the hypotenuse. State a value of -1 for the unknown side");
+								System.out.println("State the angle first (numerical value between 0 and 1) then the opposite and then the hypotenuse.\nState a value of -1 for the unknown side");
 								double [] SinSide = new double[3];
 								for (int i = 0; i < 3; i++) {
 									SinSide[i] = sc.nextDouble();
-								} double sum = SohSide(SinSide);
+								} double sum = SohCahToaSide(SinSide);
 								if (SinSide[1] == -1) {
-									System.out.println("The Opposite is " + sum + ".");
-									System.out.println("Rounded, it is " + Math.rint(sum) + ".");
+									System.out.println("The length of the opposite is " + sum + ".");
+									System.out.println("Rounded, it is " + ((Math.rint((sum*10)))/10) + ".");
 									restart = false;
 								}
 								if (SinSide[2] == -1) {
-									System.out.println("The Hypotenuse is " + sum + ".");
-									System.out.println("Rounded, it is " + Math.rint(sum) + ".");
+									System.out.println("The length of the hypotenuse is " + sum + ".");
+									System.out.println("Rounded, it is " + ((Math.rint((sum*10)))/10) + ".");
 									restart = false;
 								}
 							}
@@ -76,20 +76,21 @@ public class Trigonometry {
 							choice = sc.next();
 							if (choice.equals("1") || choice.equals("1.")) {
 								System.out.println("\nOption \"SIDE\" selected.");
-								System.out.println("Are you finding the adjacent or the hypotenuse?");
-								do {
-									System.out.println("\n1. ADJACENT\n2. HYPOTENUSE\n(TYPE IN THE NUMBER CORRELATED WITH THE OPTION)");
-									choice = sc.next();
-									if (choice.equals("1") || choice.equals("1.")) {
-
-									}
-									else if (choice.equals("2.") || choice.equals("2.")) {
-
-									}
-									else {
-										System.out.println("UNKOWN RESPONSE");
-									}
-								} while (restart == true);
+								System.out.println("State the angle first (numerical value between 0 and 1) then the adjacent and then the hypotenuse.\nState a value of -1 for the unknown side");
+								double [] CosSide = new double[3];
+								for (int i = 0; i < 3; i++) {
+									CosSide[i] = sc.nextDouble();
+								} double sum = SohCahToaSide(CosSide);
+								if (CosSide[1] == -1) {
+									System.out.println("The length of the adjacent is " + sum + ".");
+									System.out.println("Rounded, it is " + ((Math.rint((sum*10)))/10) + ".");
+									restart = false;
+								}
+								if (CosSide[2] == -1) {
+									System.out.println("The length of the hypotenuse is " + sum + ".");
+									System.out.println("Rounded, it is " + ((Math.rint((sum*10)))/10) + ".");
+									restart = false;
+								}
 							}
 							else if (choice.equals("2") || choice.equals("2.")) {
 								System.out.println("\nOption \"ANGLE\" selected.");
@@ -100,7 +101,7 @@ public class Trigonometry {
 								}
 								double sum = CahAngle(cosAngle);
 								System.out.println("Your two angles are " + sum + "° and " + (90-sum) + "°.");
-								System.out.println("Rounded, they are " + Math.rint(sum) + "° and " + Math.rint(90-sum) + "°.");
+								System.out.println("Rounded, they are " + Math.round(sum) + "° and " + Math.round(90-sum) + "°.");
 								restart = false;
 							}
 							else {
@@ -116,20 +117,22 @@ public class Trigonometry {
 							choice = sc.next();
 							if (choice.equals("1") || choice.equals("1.")) {
 								System.out.println("\nOption \"SIDE\" selected.");
-								System.out.println("Are you finding the opposite or the adjacent?");
-								do {
-									System.out.println("\n1. OPPOSITE\n2. ADJACENT\n(TYPE IN THE NUMBER CORRELATED WITH THE OPTION)");
-									choice = sc.next();
-									if (choice.equals("1") || choice.equals("1.")) {
-
-									}
-									else if (choice.equals("2.") || choice.equals("2.")) {
-
-									}
-									else {
-										System.out.println("UNKOWN RESPONSE");
-									}
-								} while (restart == true);
+								System.out.println("State the angle first (numerical value between 0 and 1) then the opposite and then the adjacent.\nState a value of -1 for the unknown side");
+								double [] CosSide = new double[3];
+								for (int i = 0; i < 3; i++) {
+									CosSide[i] = sc.nextDouble();
+								} 
+								double sum = SohCahToaSide(CosSide);
+								if (CosSide[1] == -1) {
+									System.out.println("The length of the adjacent is " + sum + ".");
+									System.out.println("Rounded, it is " + ((Math.rint((sum*10)))/10) + ".");
+									restart = false;
+								}
+								if (CosSide[2] == -1) {
+									System.out.println("The length of the hypotenuse is " + sum + ".");
+									System.out.println("Rounded, it is " + ((Math.rint((sum*10)))/10) + ".");
+									restart = false;
+								}
 							}
 							else if (choice.equals("2") || choice.equals("2.")) {
 								System.out.println("\nOption \"ANGLE\" selected.");
@@ -154,7 +157,44 @@ public class Trigonometry {
 				} while (restart == true);
 			}
 			else if (choice.equals("2") || choice.equals("2.")) {
+				do {
+					System.out.println("\nOption \"SINE LAW\" selected.");
+					do {
+						System.out.println("Type the four knowns in order of (angle A, side A, angle B, side B), type -1 for the one unknown.");
+						System.out.println("For angles, make sure it's numerical value is between 0 and 1.");
+						double[] sineLaw = new double[4];
+						for (int i = 0; i < 4; i++) {
+							sineLaw[i] = sc.nextDouble();
+						}
+						double sum = SineLaw(sineLaw);
+						if (sineLaw[0] == -1) {
+							System.out.println("Is your angle greater than 90° or less than 90° (TYPE GREATER/LESS)");
+							choice = sc.next();
+							if (choice.equalsIgnoreCase("GREATER")) {
 
+							}
+							else if (choice.equalsIgnoreCase("LESS")) {
+
+							}
+						}
+						if (sineLaw[1] == -1) {
+
+						}
+						if (sineLaw[2] == -1) {
+							System.out.println("Is your angle greater than 90° or less than 90° (TYPE GREATER/LESS)");
+							choice = sc.next();
+							if (choice.equalsIgnoreCase("GREATER")) {
+
+							}
+							else if (choice.equalsIgnoreCase("LESS")) {
+
+							}
+						}
+						if (sineLaw[3] == - 1) {
+
+						}
+					} while (restart == true);
+				} while (restart == true);
 			}
 			else if (choice.equals("3") || choice.equals("3.")) {
 
@@ -204,7 +244,7 @@ public class Trigonometry {
 			return Double.NaN;
 		}
 		else {
-			return RadtoDeg(Math.asin(y));
+			return RadtoDeg(Math.acos(y));
 		}
 	}
 	/**
@@ -221,11 +261,15 @@ public class Trigonometry {
 			return Double.NaN;
 		}
 		else {
-			return RadtoDeg(Math.asin(y));
+			return RadtoDeg(Math.atan(y));
 		}
 	}
-
-	public static double SohSide( double[] x ) {
+	/**
+	 * Description: Finds a side length using SOH / CAH / TOA
+	 * @param x => the known values of a triangle
+	 * @return => the side length
+	 */
+	public static double SohCahToaSide( double[] x ) {
 		if (x[0] < 0 && x[0] > 1) {
 			return Double.NaN;
 		}
@@ -234,6 +278,36 @@ public class Trigonometry {
 		}
 		else if (x[2] == -1) {
 			return x[1]/x[0];
+		}
+		else {
+			return Double.NaN;
+		}
+	}
+
+	/**
+	 * Description: Uses sine law to find a side or an angle
+	 * @param x => the known values of the triangle
+	 * @return => the side length or the angle
+	 */
+	public static double SineLaw( double[] x ) {
+		if (!(x[0] > 0 && x[0] < 1 && x[0] == -1) || !(x[2] > 0 && x[2] < 1 && x[2] == -1)) {
+			return Double.NaN;
+		}
+		if (x[0] == -1) {
+			double y = ((x[1]/x[3])*x[2]);
+			return RadtoDeg(Math.asin(y));
+		}
+		else if (x[1] == -1) {
+			double y = ((x[3]/x[2])*x[0]);
+			return y;
+		}
+		else if (x[2] == -1) {
+			double y = ((x[3]/x[1])*x[0]);
+			return RadtoDeg(Math.asin(y));
+		}
+		else if (x[3] == -1) {
+			double y = ((x[1]/x[0])*x[2]);
+			return y;
 		}
 		else {
 			return Double.NaN;
