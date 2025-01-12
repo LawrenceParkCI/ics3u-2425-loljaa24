@@ -171,10 +171,10 @@ public class Trigonometry {
 							System.out.println("Is your angle greater than 90° or less than 90° (TYPE GREATER/LESS)");
 							choice = sc.next();
 							if (choice.equalsIgnoreCase("GREATER")) {
-
+								System.out.println(sum);
 							}
 							else if (choice.equalsIgnoreCase("LESS")) {
-
+								System.out.println(sum);
 							}
 						}
 						if (sineLaw[1] == -1) {
