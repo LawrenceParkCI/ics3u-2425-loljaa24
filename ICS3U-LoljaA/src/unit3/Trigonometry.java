@@ -160,50 +160,48 @@ public class Trigonometry {
 				do {
 					System.out.println("\nOption \"SINE LAW\" selected.");
 					do {
-						System.out.println("Type the four knowns in order of (angle A, side A, angle B, side B), type -1 for the one unknown.");
+						restart = false;
+						System.out.println("Type the four variables in order of (angle A, side A, angle B, side B), type -1 for the one unknown.");
 						System.out.println("For angles, make sure it's numerical value is between 0 and 1.");
 						double[] sineLaw = new double[4];
 						for (int i = 0; i < 4; i++) {
 							sineLaw[i] = sc.nextDouble();
 						}
 						double sum = SineLaw(sineLaw);
-						if (sineLaw[0] == -1) {
-							System.out.println("Is your angle greater than 90° or less than 90° (TYPE GREATER/LESS)");
-							choice = sc.next();
-							if (choice.equalsIgnoreCase("GREATER")) {
-
-							}
-							else if (choice.equalsIgnoreCase("LESS")) {
-
-							}
+						if (sineLaw[0] == -1 || sineLaw[2] == -1) {
+							System.out.println("The angle found is " + sum + "°");
+							System.out.println("Rounded, it is " + Math.rint(sum) + ".");
 						}
-						if (sineLaw[1] == -1) {
-
-						}
-						if (sineLaw[2] == -1) {
-							System.out.println("Is your angle greater than 90° or less than 90° (TYPE GREATER/LESS)");
-							choice = sc.next();
-							if (choice.equalsIgnoreCase("GREATER")) {
-
-							}
-							else if (choice.equalsIgnoreCase("LESS")) {
-
-							}
-						}
-						if (sineLaw[3] == - 1) {
-
+						if (sineLaw[1] == -1 || sineLaw[3] == -1) {
+							System.out.println("The side found is " + sum + "°");
+							System.out.println("Rounded, it is " + ((Math.rint((sum*10)))/10) + ".");
 						}
 					} while (restart == true);
 				} while (restart == true);
 			}
 			else if (choice.equals("3") || choice.equals("3.")) {
-
-			}
-			else {
-				System.out.println("UNKNOWN RESPONSE");
+				System.out.println("Option \"COSINE LAW\" selected.");
+				System.out.println("Type the six variables in order of (angle A, side A, angle B, side B, angle C, side C)");
+				System.out.println("Type in -1 for the unknown needed, type in -2 for the unknowns that are not needed to be found currently");
+				System.out.println("For angles, make sure it's numerical value is between 0 and 1.");
+				double[] cosineLaw = new double[6];
+				for (int i = 0; i < 6; i++) {
+					cosineLaw[i] = sc.nextDouble();
+				}
+				double sum = CosineLaw(cosineLaw);
+				if (cosineLaw[0] == -1 || cosineLaw[2] == -1 || cosineLaw[4] == -1) {
+					System.out.println("The angle found is " + sum + "°");
+					System.out.println("Rounded, it is " + Math.rint(sum) + ".");
+				}
+				if (cosineLaw [1] == -1|| cosineLaw[3] == -1|| cosineLaw[4] == -1) {
+				}
+				else {
+					System.out.println("UNKNOWN RESPONSE"); 
+				} 
 			}
 		} while (restart == true);
 	}
+
 
 	/**
 	 * Description: Converts an angle from radians to degrees
@@ -283,7 +281,6 @@ public class Trigonometry {
 			return Double.NaN;
 		}
 	}
-
 	/**
 	 * Description: Uses sine law to find a side or an angle
 	 * @param x => the known values of the triangle
@@ -307,6 +304,44 @@ public class Trigonometry {
 		}
 		else if (x[3] == -1) {
 			double y = ((x[1]/x[0])*x[2]);
+			return y;
+		}
+		else {
+			return Double.NaN;
+		}
+	}
+
+	/**
+	 * Description: This method finds the way to solve for an unknown using cosine law.
+	 * @param x => the variables used in cosine
+	 * @return => the angle or side length found
+	 */
+	public static double CosineLaw( double[] x ) {
+		if (!(x[0] > 0 && x[0] < 1 && x[0] == -1 && x[0] == -2) || !(x[2] > 0 && x[2] < 1 && x[2] == -1 && x[2] == -2) || !(x[4] > 0 && x[4] < 1 && x[4] == -1 && x[4] == -2)) {
+			return Double.NaN;
+		}
+		if (x[0] == -1 && !(x[0] == -2)) {
+			double y = ((Math.pow(x[1], 2) - Math.pow(x[3], 2) - Math.pow(x[5], 2)) / (-2*x[3]*x[5]));
+			return RadtoDeg(Math.acos(y));
+		}
+		if (x[1] == -1 && !(x[1] == -2)) {
+			double y =  (Math.sqrt(Math.pow(x[3], 2) + Math.pow(x[5], 2) -2*x[3]*x[5]*x[0]));
+			return y;
+		}
+		if (x[2] == -1 && !(x[2] == -2)) {
+			double y = ((Math.pow(x[3], 2) - Math.pow(x[1], 2) - Math.pow(x[5], 2)) / (-2*x[1]*x[5]));
+			return RadtoDeg(Math.acos(y));
+		}
+		if (x[3] == -1 && !(x[3] == -2)) {
+			double y =  (Math.sqrt(Math.pow(x[1], 2) + Math.pow(x[5], 2) -2*x[1]*x[5]*x[2]));
+			return y;
+		}
+		if (x[4] == -1 && !(x[4] == -2)) {
+			double y = ((Math.pow(x[5], 2) - Math.pow(x[1], 2) - Math.pow(x[1], 2)) / (-2*x[1]*x[3]));
+			return RadtoDeg(Math.acos(y));
+		}
+		if (x[5] == -1 && !(x[5] == -2)) {
+			double y =  (Math.sqrt(Math.pow(x[1], 2) + Math.pow(x[3], 2) -2*x[1]*x[3]*x[4]));
 			return y;
 		}
 		else {
