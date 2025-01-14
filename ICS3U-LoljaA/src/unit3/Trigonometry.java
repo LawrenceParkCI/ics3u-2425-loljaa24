@@ -171,11 +171,21 @@ public class Trigonometry {
 						if (sineLaw[0] == -1 || sineLaw[2] == -1) {
 							System.out.println("The angle found is " + sum + "°");
 							System.out.println("Rounded, it is " + Math.rint(sum) + ".");
-						}
-						if (sineLaw[1] == -1 || sineLaw[3] == -1) {
-							System.out.println("The side found is " + sum + "°");
-							System.out.println("Rounded, it is " + ((Math.rint((sum*10)))/10) + ".");
-						}
+							if (sineLaw[0] == -1) {
+								System.out.println("Is your angle greater than 90° or less than 90° (TYPE GREATER/LESS)");
+								choice = sc.next();
+								if (choice.equalsIgnoreCase("GREATER")) {
+									System.out.println(sum);
+								}
+								else if (choice.equalsIgnoreCase("LESS")) {
+									System.out.println(sum);
+								}
+							}
+							if (sineLaw[1] == -1 || sineLaw[3] == -1) {
+								System.out.println("The side found is " + sum + "°");
+								System.out.println("Rounded, it is " + ((Math.rint((sum*10)))/10) + ".");
+							}
+						} while (restart == true);
 					} while (restart == true);
 				} while (restart == true);
 			}
