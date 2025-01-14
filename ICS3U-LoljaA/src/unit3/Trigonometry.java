@@ -12,54 +12,63 @@ public class Trigonometry {
 	 */
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
-		boolean restart = true; // Check to see if the user wants to repeat the program or not
+		boolean restart = true; // Checker to see if the user has typed in the correct response, will repeat if not typed correctly.
 
 		// narrowing down the user's options through if, if else, and else statements
-		Math.asin(0.0956);
 
 		do {
 			System.out.println("What trigonometric function do you want to use?");
 			System.out.println("1. SOH CAH TOA\n2. SINE LAW\n3. COSINE LAW\n(TYPE IN THE NUMBER CORRELATED WITH THE OPTION)");
 			String choice = sc.next();
+			// Choice for SOH CAH TOA to find the degree of an angle or to find side length
 			if (choice.equalsIgnoreCase("1")) {
 				System.out.println("\nThe Option SOH CAH TOA is chosen");
 				System.out.println("Choose one of the options below:");
 				do {
 					System.out.println("\n1. SOH (Sin = Opposite/Hypotenuse)\n2. CAH (Cos = Adjacent/Hypotenuse)\n3. TOA (Tan = Opposite/Adjacent)\n(TYPE IN THE NUMBER CORRELATED WITH THE OPTION)");
 					choice = sc.next();
+					// Choice to use SOH to find a side length or the degree of an angle
 					if (choice.equals("1") || choice.equals("1.")) {
 						System.out.println("\nOption \"SOH\" selected.");
 						System.out.println("Are you finding an unknown side or an unknown angle?");
 						do {
 							System.out.println("\n1. SIDE\n2. ANGLE\n(TYPE IN THE NUMBER CORRELATED WITH THE OPTION)");
 							choice = sc.next();
+							// Choice to find a side length using SOH
 							if (choice.equals("1") || choice.equals("1.")) {
 								System.out.println("\nOption \"SIDE\" selected.");
 								System.out.println("State the angle first (numerical value between 0 and 1) then the opposite and then the hypotenuse.\nState a value of -1 for the unknown side");
-								double [] SinSide = new double[3];
+								double [] SinSide = new double[3]; // Array with a length of three, angle is SinSide[0], Opposite is SinSide[1], Hypotenuse is SinSide[2].
 								for (int i = 0; i < 3; i++) {
 									SinSide[i] = sc.nextDouble();
 								} double sum = SohCahToaSide(SinSide);
-								if (SinSide[1] == -1) {
+								if (SinSide[1] == -1) { // If the length of the opposite side has to be found.
+									// The result below
 									System.out.println("The length of the opposite is " + sum + ".");
+									// Rounds to one decimal place
 									System.out.println("Rounded, it is " + ((Math.rint((sum*10)))/10) + ".");
 									restart = false;
 								}
-								if (SinSide[2] == -1) {
+								if (SinSide[2] == -1) { // If the length of the hypotenuse has to be found.
+									// The result below
 									System.out.println("The length of the hypotenuse is " + sum + ".");
+									// Rounds to one decimal place
 									System.out.println("Rounded, it is " + ((Math.rint((sum*10)))/10) + ".");
 									restart = false;
 								}
 							}
+							// Choice to find the degree of an angle using SOH
 							else if (choice.equals("2") || choice.equals("2.")) {
 								System.out.println("\nOption \"ANGLE\" selected.");
 								System.out.println("State the opposite first and then the hypotenuse: (NUMBERS ONLY)");
-								double[] sinAngle = new double[2];
+								double[] sinAngle = new double[2]; // Array with a length of two, sinAngle[0] is the opposite, sinAngle[1] is the hypotenuse,
 								for (int i = 0; i < 2; i++) {
 									sinAngle[i] = sc.nextDouble();
 								}
 								double sum = SohAngle(sinAngle);
 								System.out.println("Your two angles are " + sum + "° and " + (90-sum) + "°.");
+								// The result below
+								// To find the other angle, subtract the found angle by 90
 								System.out.println("Rounded, they are " + Math.rint(sum) + "° and " + Math.rint(90-sum) + "°.");
 								restart = false;
 							}
@@ -68,38 +77,47 @@ public class Trigonometry {
 							}
 						} while (restart == true);
 					}
+					// Choice to use CAH to find a side length or the degree of an angle
 					else if (choice.equals("2") || choice.equals("2.")) {
 						System.out.println("\nOption \"CAH\" selected.");
 						System.out.println("Are you finding an unknown side or an unknown angle?");
 						do {
 							System.out.println("\n1. SIDE\n2. ANGLE\n(TYPE IN THE NUMBER CORRELATED WITH THE OPTION)");
 							choice = sc.next();
+							// Choice to find the side length using CAH
 							if (choice.equals("1") || choice.equals("1.")) {
 								System.out.println("\nOption \"SIDE\" selected.");
 								System.out.println("State the angle first (numerical value between 0 and 1) then the adjacent and then the hypotenuse.\nState a value of -1 for the unknown side");
-								double [] CosSide = new double[3];
+								double [] CosSide = new double[3]; // Array with a length of three, angle is CosSide[0], Adjacent is CosSide[1], Hypotenuse is CosSide[2].
 								for (int i = 0; i < 3; i++) {
 									CosSide[i] = sc.nextDouble();
 								} double sum = SohCahToaSide(CosSide);
-								if (CosSide[1] == -1) {
+								if (CosSide[1] == -1) { // If the side length of the adjacent has to be found
+									// The result below.
 									System.out.println("The length of the adjacent is " + sum + ".");
+									// Rounds to one decimal place
 									System.out.println("Rounded, it is " + ((Math.rint((sum*10)))/10) + ".");
 									restart = false;
 								}
-								if (CosSide[2] == -1) {
+								if (CosSide[2] == -1) { // If the side length of the hypotenuse has to be found
+									// The result below
 									System.out.println("The length of the hypotenuse is " + sum + ".");
+									// Rounds to one decimal place
 									System.out.println("Rounded, it is " + ((Math.rint((sum*10)))/10) + ".");
 									restart = false;
 								}
 							}
+							// Choice to find the degree of an angle using CAH
 							else if (choice.equals("2") || choice.equals("2.")) {
 								System.out.println("\nOption \"ANGLE\" selected.");
 								System.out.println("State first the adjacent and then the hypotenuse:");
-								double[] cosAngle = new double[2];
+								double[] cosAngle = new double[2]; // Array with a length of two, cosAngle[0] is the adjacent, cosAngle[1] is the hypotenuse
 								for (int i = 0; i < 2; i++) {
 									cosAngle[i] = sc.nextDouble();
 								}
 								double sum = CahAngle(cosAngle);
+								// The result below
+								// To find the other angle, subtract the found angle by 90
 								System.out.println("Your two angles are " + sum + "° and " + (90-sum) + "°.");
 								System.out.println("Rounded, they are " + Math.round(sum) + "° and " + Math.round(90-sum) + "°.");
 								restart = false;
@@ -109,31 +127,38 @@ public class Trigonometry {
 							}
 						} while (restart == true);
 					}
+					// Choice to use TOA to find a side length or the degree of an angle
 					else if (choice.equals("3") || choice.equals("3.")) {
 						System.out.println("\nOption \"TOA\" selected.");
 						System.out.println("Are you finding an unknown side or an unknown angle?");
 						do {
 							System.out.println("\n1. SIDE\n2. ANGLE\n(TYPE IN THE NUMBER CORRELATED WITH THE OPTION)");
 							choice = sc.next();
+							// Choice to find a side length using TOA
 							if (choice.equals("1") || choice.equals("1.")) {
 								System.out.println("\nOption \"SIDE\" selected.");
 								System.out.println("State the angle first (numerical value between 0 and 1) then the opposite and then the adjacent.\nState a value of -1 for the unknown side");
-								double [] CosSide = new double[3];
+								double [] TanSide = new double[3]; // Array with a length of three, TanSide[0] is the angle, TanSide[1] is the opposite, and TanSide[2] is the adjacent
 								for (int i = 0; i < 3; i++) {
-									CosSide[i] = sc.nextDouble();
+									TanSide[i] = sc.nextDouble();
 								} 
-								double sum = SohCahToaSide(CosSide);
-								if (CosSide[1] == -1) {
+								double sum = SohCahToaSide(TanSide);
+								if (TanSide[1] == -1) { // If the side length of the opposite has to be found
+									// The result below
 									System.out.println("The length of the adjacent is " + sum + ".");
+									// Rounds to one decimal place
 									System.out.println("Rounded, it is " + ((Math.rint((sum*10)))/10) + ".");
 									restart = false;
 								}
-								if (CosSide[2] == -1) {
+								if (TanSide[2] == -1) { // If the side length of the hypotenuse has to be found
+									// The result below
 									System.out.println("The length of the hypotenuse is " + sum + ".");
+									// Rounds to one decimal place
 									System.out.println("Rounded, it is " + ((Math.rint((sum*10)))/10) + ".");
 									restart = false;
 								}
 							}
+							// If the degree of an angle has to be found using TOA
 							else if (choice.equals("2") || choice.equals("2.")) {
 								System.out.println("\nOption \"ANGLE\" selected.");
 								System.out.println("State the opposite first and then the adjacent:");
@@ -142,6 +167,8 @@ public class Trigonometry {
 									tanAngle[i] = sc.nextDouble();
 								}
 								double sum = ToaAngle(tanAngle);
+								// The result below
+								// To find the other angle, subtract the found angle by 90
 								System.out.println("Your two angles are " + sum + "° and " + (90-sum) + "°.");
 								System.out.println("Rounded, they are " + Math.rint(sum) + "° and " + Math.rint(90-sum) + "°.");
 								restart = false;
@@ -202,8 +229,12 @@ public class Trigonometry {
 				if (cosineLaw[0] == -1 || cosineLaw[2] == -1 || cosineLaw[4] == -1) {
 					System.out.println("The angle found is " + sum + "°");
 					System.out.println("Rounded, it is " + Math.rint(sum) + ".");
+					restart = false;
 				}
-				if (cosineLaw [1] == -1|| cosineLaw[3] == -1|| cosineLaw[4] == -1) {
+				if (cosineLaw [1] == -1|| cosineLaw[3] == -1|| cosineLaw[5] == -1) {
+					System.out.println("The side found is " + sum + ".");
+					System.out.println("Rounded, it is " + ((Math.rint((sum*10)))/10) + ".");
+					restart = false;
 				}
 				else {
 					System.out.println("UNKNOWN RESPONSE"); 
@@ -323,36 +354,33 @@ public class Trigonometry {
 
 	/**
 	 * Description: This method finds the way to solve for an unknown using cosine law.
-	 * @param x => the variables used in cosine
+	 * @param x => the variables used
 	 * @return => the angle or side length found
 	 */
 	public static double CosineLaw( double[] x ) {
-		if (!(x[0] > 0 && x[0] < 1 && x[0] == -1 && x[0] == -2) || !(x[2] > 0 && x[2] < 1 && x[2] == -1 && x[2] == -2) || !(x[4] > 0 && x[4] < 1 && x[4] == -1 && x[4] == -2)) {
-			return Double.NaN;
-		}
 		if (x[0] == -1 && !(x[0] == -2)) {
 			double y = ((Math.pow(x[1], 2) - Math.pow(x[3], 2) - Math.pow(x[5], 2)) / (-2*x[3]*x[5]));
 			return RadtoDeg(Math.acos(y));
 		}
 		if (x[1] == -1 && !(x[1] == -2)) {
-			double y =  (Math.sqrt(Math.pow(x[3], 2) + Math.pow(x[5], 2) -2*x[3]*x[5]*x[0]));
-			return y;
+			double y = (Math.pow(x[3], 2) + Math.pow(x[5], 2) -2*x[3]*x[5]*x[0]);
+			return Math.sqrt(y);
 		}
 		if (x[2] == -1 && !(x[2] == -2)) {
 			double y = ((Math.pow(x[3], 2) - Math.pow(x[1], 2) - Math.pow(x[5], 2)) / (-2*x[1]*x[5]));
 			return RadtoDeg(Math.acos(y));
 		}
 		if (x[3] == -1 && !(x[3] == -2)) {
-			double y =  (Math.sqrt(Math.pow(x[1], 2) + Math.pow(x[5], 2) -2*x[1]*x[5]*x[2]));
-			return y;
+			double y = (Math.pow(x[1], 2) + Math.pow(x[5], 2) -2*x[1]*x[5]*x[2]);
+			return Math.sqrt(y);
 		}
 		if (x[4] == -1 && !(x[4] == -2)) {
 			double y = ((Math.pow(x[5], 2) - Math.pow(x[1], 2) - Math.pow(x[1], 2)) / (-2*x[1]*x[3]));
 			return RadtoDeg(Math.acos(y));
 		}
 		if (x[5] == -1 && !(x[5] == -2)) {
-			double y =  (Math.sqrt(Math.pow(x[1], 2) + Math.pow(x[3], 2) -2*x[1]*x[3]*x[4]));
-			return y;
+			double y =  (Math.pow(x[1], 2) + Math.pow(x[3], 2) -2*x[1]*x[3]*x[4]);
+			return Math.sqrt(y);
 		}
 		else {
 			return Double.NaN;
