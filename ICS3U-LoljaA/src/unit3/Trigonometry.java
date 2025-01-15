@@ -183,6 +183,7 @@ public class Trigonometry {
 					}
 				} while (restart == true);
 			}
+			// Choice to use sine law to find the degree of an angle or a side length
 			else if (choice.equals("2") || choice.equals("2.")) {
 				do {
 					System.out.println("\nOption \"SINE LAW\" selected.");
