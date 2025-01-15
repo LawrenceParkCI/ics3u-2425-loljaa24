@@ -41,7 +41,7 @@ public class Trigonometry {
 								double [] SinSide = new double[3]; // Array with a length of three, angle is SinSide[0], Opposite is SinSide[1], Hypotenuse is SinSide[2].
 								for (int i = 0; i < 3; i++) {
 									SinSide[i] = sc.nextDouble();
-								} double sum = SohCahToaSide(SinSide);
+								} double sum = SohCahSide(SinSide);
 								if (SinSide[1] == -1) { // If the length of the opposite side has to be found.
 									// The result below
 									System.out.println("The length of the opposite is " + sum + ".");
