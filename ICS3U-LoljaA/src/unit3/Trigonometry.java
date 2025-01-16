@@ -17,6 +17,7 @@ public class Trigonometry {
 		// narrowing down the user's options through if, if else, and else statements
 
 		do { // Do-While loops are necessary so if the user types in an answer that is not an option it can repeat the question
+			System.out.println("Welcome to the Trigonometry program!"); // Introduction to the user
 			System.out.println("What trigonometric function do you want to use?");
 			System.out.println("1. SOH CAH TOA\n2. SINE LAW\n3. COSINE LAW\n(TYPE IN THE NUMBER CORRELATED WITH THE OPTION)");
 			String choice = sc.next();
@@ -137,7 +138,7 @@ public class Trigonometry {
 							// Choice to find a side length using TOA
 							if (choice.equals("1") || choice.equals("1.")) {
 								System.out.println("\nOption \"SIDE\" selected.");
-								System.out.println("State the angle first (numerical value between 0 and 1) then the opposite and then the adjacent.\nState a value of -1 for the unknown side");
+								System.out.println("State the angle first (numerical value greater than 0) then the opposite and then the adjacent.\nState a value of -1 for the unknown side");
 								double [] TanSide = new double[3]; // Array with a length of three, TanSide[0] is the angle, TanSide[1] is the opposite, and TanSide[2] is the adjacent
 								for (int i = 0; i < 3; i++) {
 									TanSide[i] = sc.nextDouble();
@@ -245,8 +246,8 @@ public class Trigonometry {
 				} 
 			}
 		} while (restart == true);
+		sc.close();
 	}
-
 
 	/**
 	 * Description: Converts an angle from radians to degrees
@@ -342,6 +343,7 @@ public class Trigonometry {
 			return Double.NaN;
 		}
 	}
+
 	/**
 	 * Description: Finds a side length using TOA
 	 * @param x => the known and unknown values of the triangle
@@ -362,7 +364,7 @@ public class Trigonometry {
 			return Double.NaN;
 		}
 	}
-	
+
 	/**
 	 * Description: Uses sine law to find a side or an angle
 	 * @param x => the known values of the triangle
